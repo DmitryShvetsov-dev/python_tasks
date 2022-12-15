@@ -1,0 +1,18 @@
+import re
+textFile = open('text.txt')
+text = textFile.read()
+textList = text.split()
+cleanText = []
+letters = "aeyuioAEYUIO"
+for i in textList:
+    i = re.sub("[^A-Za-z]", "", i)
+    if(i==""):
+        continue
+    else:    
+        cleanText.append(i)
+for i in cleanText:
+    for j in letters:
+        for n in letters:
+            if(i[0]==j and i[-1]==n):
+                print(i)
+textFile.close()        

@@ -14,11 +14,12 @@ class Circle(GeometricFigure):
         print(self.name , "perimeter: " , 2*3.14*self.radius)
 
 class Rectangle(GeometricFigure):
-    def __init__(self,name,argument_1,argument_2):
+    def __init__(self,name,argument_1,argument_2,color):
         super().__init__(self)
         self.argument_1 = argument_1
         self.argument_2 = argument_2
         self.name = name
+        self.color = color
     def area(self):
         print(self.name , "area: " , self.argument_1*self.argument_2)
     def perimeter(self):
@@ -46,7 +47,7 @@ if(shapeName == "circle"):
     print(CircleObject.perimeter())
 if(shapeName == "rectangle"):
     argument_1,argument_2= map(int, input("Please,enter the length of the sides separated by a space:\n").split())
-    RectangleObject = Rectangle(shapeName,argument_1,argument_2)
+    RectangleObject = Rectangle(shapeName,argument_1,argument_2,"red")
     print(RectangleObject.area())
     print(RectangleObject.perimeter())
 if(shapeName == "triangle"):

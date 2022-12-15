@@ -1,0 +1,22 @@
+class FourIntegerNumbers():
+    def __init__(self,a,b,c,d):
+        self.a = a
+        self.b = b
+        self.c = c
+        self.d = d
+    def arithmeticalMean(self):
+        return (self.a + self.b + self.c + self.d)/4
+    def maxNumber(self):
+        return max(self.a,self.b,self.c,self.d)
+    def objectInfo(self):
+        return("a="+str(self.a)+" "+"b="+str(self.b)+" "+"c="+str(self.c)+" "+"d="+str(self.d))
+    def __del__(self): 
+        print("Class destructor called")
+
+ConstObject1 = FourIntegerNumbers(1,1,1,1)
+ConstObject2 = FourIntegerNumbers(2,9,1,20)
+a, b, c, d = map(float, input().split())
+InputObject = FourIntegerNumbers(a,b,c,d)
+print("Arifmetical Mean of ConstObject1:", ConstObject1.arithmeticalMean())
+print("Max number of ConstObject2:",ConstObject2.maxNumber())
+print(InputObject.objectInfo())

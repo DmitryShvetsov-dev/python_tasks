@@ -1,0 +1,9 @@
+def monotone(n):
+    a_n = (2*n*n+1)/(n*n-11)
+    a_nPlus1 = (2*(n+1)*(n+1)+1)/((n+1)*(n+1)-11)
+    if (a_n==a_nPlus1):
+        print("The sequence is constant")
+    else: 
+        print("The sequence is monotonic")
+n = float(input())
+monotone(n)

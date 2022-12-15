@@ -1,0 +1,56 @@
+from math import sqrt
+
+class GeometricFigure:
+    def __init__(self,name):
+        self.name = name
+class Circle(GeometricFigure):
+    def __init__(self,name,radius):
+        super().__init__(self)
+        self.radius = radius
+        self.name = name
+    def area(self):
+        print(self.name , "area: " , 3.14*self.radius*self.radius)
+    def perimeter(self):
+        print(self.name , "perimeter: " , 2*3.14*self.radius)
+
+class Rectangle(GeometricFigure):
+    def __init__(self,name,argument_1,argument_2):
+        super().__init__(self)
+        self.argument_1 = argument_1
+        self.argument_2 = argument_2
+        self.name = name
+    def area(self):
+        print(self.name , "area: " , self.argument_1*self.argument_2)
+    def perimeter(self):
+        print(self.name , "perimeter: ", 2*(self.argument_1+self.argument_2))
+
+class Triangle(GeometricFigure):
+    def __init__(self,name,argument_1,argument_2,argument_3):
+        super().__init__(self)
+        self.argument_1 = argument_1
+        self.argument_2 = argument_2
+        self.argument_3 = argument_3
+        self.name = name
+    def area(self):
+        print(self.name , "area: " , (sqrt((self.argument_1+self.argument_2+self.argument_3)/2)*
+        ((self.argument_1+self.argument_2+self.argument_3)-self.argument_1)*
+        ((self.argument_1+self.argument_2+self.argument_3)-self.argument_2)*
+        ((self.argument_1+self.argument_2+self.argument_3)-self.argument_3)))
+    def perimeter(self):
+        print(self.name , "perimeter: " , self.argument_1+self.argument_2+self.argument_3)
+shapeName = input("Please, write the name of the shape:\ncircle\nrectangle\ntriangle\n")
+if(shapeName == "circle"):
+    radius = float(input("Please, enter a radius:\n"))
+    CircleObject = Circle(shapeName,radius)
+    print(CircleObject.area())
+    print(CircleObject.perimeter())
+if(shapeName == "rectangle"):
+    argument_1,argument_2= map(int, input("Please,enter the length of the sides separated by a space:\n").split())
+    RectangleObject = Rectangle(shapeName,argument_1,argument_2)
+    print(RectangleObject.area())
+    print(RectangleObject.perimeter())
+if(shapeName == "triangle"):
+    argument_1,argument_2,argument_3= map(int, input("Please,enter the length of the sides separated by a space:\n").split())
+    TriangleObject = Triangle(shapeName,argument_1,argument_2,argument_3)
+    print(TriangleObject.area())
+    print(TriangleObject.perimeter())
